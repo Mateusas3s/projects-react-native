@@ -14,9 +14,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#D37',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#d37',
   },
   text: {
     fontSize: 30,
@@ -24,8 +22,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'center',
     color: '#fff',
-    backgroundColor: '#322',
-    width: 500,
-    height: 80,
+    backgroundColor: '#655',
+    marginTop: 60,
+    marginHorizontal: 50,
+    borderRadius: 5,
+    shadowColor: '#000',
+    shadowOffset: {width:1, height:5},
+    shadowOpacity: 0.75,
+    shadowRadius: 5,
   }
 });
