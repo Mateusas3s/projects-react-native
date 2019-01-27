@@ -1,24 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text} >Frases do Dia</Text>
-      </View>
-    );
-  }
-}
-
 const styles = StyleSheet.create({
-  container: {
+  styleView: {
     flex: 1,
     backgroundColor: '#d37',
   },
-  text: {
+  styleText: {
     fontSize: 30,
     fontFamily: 'Roboto',
+    fontWeight: 'bold',
+    fontStyle: 'italic',
     textAlign: 'center',
     textAlignVertical: 'center',
     color: '#fff',
@@ -32,3 +24,13 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
   }
 });
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <View style={styles.styleView}>
+        <Text style={styles.styleText}>Frases do Dia</Text>
+      </View>
+    );
+  }
+}
