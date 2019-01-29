@@ -1,6 +1,26 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Image} from 'react-native';
 
+const styles = StyleSheet.create({
+  btnChoiceJKP:{
+    width: 90,
+  },
+  painelActions:{
+    margin: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  }
+})
+
+class Top extends React.Component {
+  render() {
+    return (
+      <View>
+        <Image source={require('./assets/jokenpo.jpeg')}/>
+      </View>
+    );
+  }
+}
 
 export default class App extends React.Component {
 
@@ -45,6 +65,31 @@ export default class App extends React.Component {
   render() {
     return (
       <View>
+
+        <Top></Top>
+
+        <View style={styles.painelActions}>
+          <View style={styles.btnChoiceJKP}>
+            <Button
+              title='Pedra'
+              onPress={() => {this.jokenpo('Pedra')}}
+            />
+          </View>
+          <View style={styles.btnChoiceJKP}>
+            <Button
+              title='Papel'
+              onPress={() => {this.jokenpo('Papel')}}
+            />
+          </View>
+          <View style={styles.btnChoiceJKP}>
+            <Button
+              title='Tesoura'
+              onPress={() => {this.jokenpo('Tesoura')}}
+            />
+          </View>
+        </View>
+        
+
         <Text>
           Escolha do Computador:  {this.state.comput_choice}
         </Text>
@@ -54,18 +99,7 @@ export default class App extends React.Component {
         <Text>
           Resultado: {this.state.result}
         </Text>
-        <Button
-          title='Pedra'
-          onPress={() => {this.jokenpo('Pedra')}}
-        />
-        <Button
-          title='Papel'
-          onPress={() => {this.jokenpo('Papel')}}
-        />
-        <Button
-          title='Tesoura'
-          onPress={() => {this.jokenpo('Tesoura')}}
-        />
+        
       </View>
     );
   }
