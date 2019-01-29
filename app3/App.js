@@ -1,26 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Image} from 'react-native';
-
-const styles = StyleSheet.create({
-  btnChoiceJKP:{
-    width: 90,
-  },
-  painelActions:{
-    margin: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  }
-})
-
-class Top extends React.Component {
-  render() {
-    return (
-      <View>
-        <Image source={require('./assets/jokenpo.jpeg')}/>
-      </View>
-    );
-  }
-}
+import {Text, View, Button} from 'react-native';
+import Top from './src/components/top';
+import Icon from './src/components/icon';
+import styles from './src/styles/styles'
 
 export default class App extends React.Component {
 
@@ -52,7 +34,7 @@ export default class App extends React.Component {
     }else if ((user_choice == 'Pedra' && comput_choice == 'Tesoura') || 
               (user_choice == 'Tesoura' && comput_choice == 'Papel') ||
               (user_choice == 'Papel' && comput_choice == 'Pedra')) {
-      result = 'Você venceu! :)';
+      result = 'Você Venceu! :)';
     }else {
       result = 'Você Perdeu! :(';
     }
@@ -89,17 +71,14 @@ export default class App extends React.Component {
           </View>
         </View>
         
+        <View style={styles.painelResult}>
+          <Text style={styles.txtResult}>
+            {this.state.result}
+          </Text>
 
-        <Text>
-          Escolha do Computador:  {this.state.comput_choice}
-        </Text>
-        <Text>
-          Escolha do Usuário: {this.state.user_choice}
-        </Text>
-        <Text>
-          Resultado: {this.state.result}
-        </Text>
-        
+          <Icon choice={this.state.comput_choice} player='Computador'></Icon>
+          <Icon choice={this.state.user_choice} player='Você'></Icon>
+        </View>
       </View>
     );
   }
