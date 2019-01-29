@@ -8,13 +8,15 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {user_choice: '',
-                  comput_choice: ''}
+                  comput_choice: '',
+                  result: ''}
   }
 
   jokenpo(user_choice){
 
     var num_rand = Math.floor(Math.random() * 3);
     var comput_choice = '';
+    var result = '';
 
     switch(num_rand){
       case 0: comput_choice = 'Pedra';
@@ -25,8 +27,19 @@ export default class App extends React.Component {
       break;
     }
 
+    if (user_choice == comput_choice) {
+      result = 'Empate';
+    }else if ((user_choice == 'Pedra' && comput_choice == 'Tesoura') || 
+              (user_choice == 'Tesoura' && comput_choice == 'Papel') ||
+              (user_choice == 'Papel' && comput_choice == 'Pedra')) {
+      result = 'Você venceu! :)';
+    }else {
+      result = 'Você Perdeu! :(';
+    }
+
     this.setState({user_choice: user_choice,
-                  comput_choice: comput_choice});
+                  comput_choice: comput_choice,
+                  result: result});
   }
 
   render() {
@@ -39,7 +52,7 @@ export default class App extends React.Component {
           Escolha do Usuário: {this.state.user_choice}
         </Text>
         <Text>
-          Resultado
+          Resultado: {this.state.result}
         </Text>
         <Button
           title='Pedra'
