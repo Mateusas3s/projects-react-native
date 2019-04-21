@@ -1,23 +1,27 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import Itens from './Itens';
 import axios from 'axios';
 
 export default class ListaItens extends React.Component {
 
+  constructor(props){
+    super(props);
+
+    this.state = { listaItens: [] };
+  }
+
   componentWillMount(){
     //request Http
-    axios.get('faus.com.br/recursos/c/dmairr/api/Itens.html')
-      .then(response => {console.log(response);})
-      .catch(() => {console.log('Erro ao recuperar os dados!')});
+    axios.get('http://faus.com.br/recursos/c/dmairr/api/itens.html')
+      .then(response => { this.setState({ listaItens: response.data }); })
+      .catch(() => { console.log('Erro ao recuperar os dados!') });
   }
   
   render() {
     return (
       <View>
-        <Itens/>
-        <Itens/>
-        <Itens/>
+        { this.state.listaItens.map( item => ( <Text key={ item.titulo }>{ item.titulo }</Text> )) }
       </View>
     );
   }
