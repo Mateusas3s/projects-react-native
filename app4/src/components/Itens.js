@@ -5,7 +5,7 @@ export default class Itens extends React.Component {
   
   render() {
     return (
-      <View>
+      <View style={StyleSheet.item}>
         <Image style={{ height:100, width:100 }} source={{ uri: this.props.item.foto }} />
         <Text>{ this.props.item.titulo }</Text>
         <Text>{ this.props.item.valor }</Text>
@@ -16,3 +16,13 @@ export default class Itens extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  item: {
+    borderWidth: 0.5,
+    borderColor: '#999',
+    margin: 10,
+    padding: 10,
+  }
+
+});
