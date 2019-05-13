@@ -1,16 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-<<<<<<< HEAD
-  "packagerPid": 6010,
-  "expoServerNgrokUrl": "https://dx-uv5.anonymous.app4.exp.direct",
-  "packagerNgrokUrl": "https://packager.dx-uv5.anonymous.app4.exp.direct",
-  "ngrokPid": 6057
-=======
-  "packagerPid": 11526,
-  "expoServerNgrokUrl": "https://dx-uv5.anonymous.app4.exp.direct",
-  "packagerNgrokUrl": "https://packager.dx-uv5.anonymous.app4.exp.direct",
-  "ngrokPid": 11681
->>>>>>> ae3f3645c7d7872794857f4d95d6be14eb2db4c1
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
