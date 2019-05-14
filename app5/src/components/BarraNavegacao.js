@@ -19,13 +19,12 @@ export default class BarraNavegacao extends React.Component {
 const styles = StyleSheet.create({
     barraTitulo: {
         backgroundColor: '#ccc',
-        padding: 10,
-        paddingTop: 30,
-        height: 60
+        paddingTop: 40,
+        height: 100
     },
     titulo: {
         flex: 1,
-        fontSize: 18,
+        fontSize: 20,
         textAlign: 'center',
         color: '#000'
     }

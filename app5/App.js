@@ -1,21 +1,15 @@
 import React from 'react';
 import {  
   View,
-  StatusBar
 } from 'react-native';
 
-import BarraNavegacao from './src/components/BarraNavegacao'
+import CenaPrincipal from './src/components/CenaPrincipal'
 
 export default class App extends React.Component {
   render() {
     return (
       <View>
-        <StatusBar 
-          //hidden={true}
-          backgroundColor= '#ccc'
-        />
-
-      <BarraNavegacao />
+        <CenaPrincipal />
 
       </View>
     );
