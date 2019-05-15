@@ -26,31 +26,39 @@ export default class CenaPrincipal extends React.Component {
         />
 
         <BarraNavegacao />
-        <Image source={logo} />
-        <Image source={menuCliente} />
-        <Image source={menuContato} />
-        <Image source={menuEmpresa} />
-        <Image source={menuServico} />
+        
+        <View style={styles.logo}>
+          <Image source={logo} />
+        </View>
+       
+        <View style={styles.menu}>
+          <View style={styles.menuGroup}>
+            <Image style={styles.imgMenu} source={menuCliente} />
+            <Image style={styles.imgMenu} source={menuContato} />
+          </View>
 
-
-
-
+          <View style={styles.menuGroup}>
+            <Image  style={styles.imgMenu} source={menuEmpresa} />
+            <Image style={styles.imgMenu} source={menuServico} />
+          </View>
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-    barraTitulo: {
-        backgroundColor: '#ccc',
-        padding: 10,
-        paddingTop: 30,
-        height: 60
+    logo: {
+      marginTop: 30,
+      alignItems: 'center'
     },
-    titulo: {
-        flex: 1,
-        fontSize: 18,
-        textAlign: 'center',
-        color: '#000'
+    menu: {
+      alignItems: 'center'
+    },
+    menuGroup: {
+      flexDirection: 'row'
+    },
+    imgMenu: {
+      margin: 15
     }
 });
