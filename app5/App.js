@@ -3,13 +3,13 @@ import {
   View,
 } from 'react-native';
 
-import CenaPrincipal from './src/components/CenaPrincipal'
+import CenaCliente from './src/components/CenaCliente'
 
 export default class App extends React.Component {
   render() {
     return (
       <View>
-        <CenaPrincipal />
+        <CenaCliente />
 
       </View>
     );

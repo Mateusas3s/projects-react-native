@@ -1,6 +1,7 @@
 import React from 'react';
 import { 
     StyleSheet,
+    Text,
     View,
     StatusBar,
     Image
@@ -18,7 +19,7 @@ const menuServico = require('../../assets/menu_servico.png')
 export default class CenaPrincipal extends React.Component {
   render() {
     return (
-      <View>
+        <View>
         <StatusBar 
           //hidden={true}
           backgroundColor= '#ccc'
