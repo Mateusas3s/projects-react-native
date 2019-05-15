@@ -3,7 +3,7 @@ import {
     StyleSheet,
     View,
     StatusBar,
-    Image
+    Image,
 } from 'react-native';
 
 import BarraNavegacao from './BarraNavegacao'
