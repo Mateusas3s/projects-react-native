@@ -4,6 +4,7 @@ import {
     View,
     StatusBar,
     Image,
+    TouchableHighlight
 } from 'react-native';
 
 import BarraNavegacao from './BarraNavegacao'
@@ -32,7 +33,13 @@ export default class CenaPrincipal extends React.Component {
        
         <View style={styles.menu}>
           <View style={styles.menuGroup}>
-            <Image style={styles.imgMenu} source={menuCliente} />
+            <TouchableHighlight
+              onPress={() => {
+                this.props.navigator.push({ id: 'cliente' })
+              }}
+            >
+              <Image style={styles.imgMenu} source={menuCliente} />
+            </TouchableHighlight>
             <Image style={styles.imgMenu} source={menuContato} />
           </View>
 

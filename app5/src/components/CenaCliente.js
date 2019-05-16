@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
       marginTop: 10
     },
     txtDetalheCliente: {
-      fontSize: 30,
-      color: '#b9c941',
+      fontSize: 20,
+      color: '#222222',
       marginLeft: 10,
       marginTop: 20
     }

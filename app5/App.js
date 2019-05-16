@@ -1,8 +1,7 @@
 import React from 'react';
-import {  
-  View,
+import {
   Navigator
-} from 'react-native';
+} from 'react-native-deprecated-custom-components'
 
 import CenaPrincipal from './src/components/CenaPrincipal'
 import CenaCliente from './src/components/CenaCliente'
@@ -11,14 +10,14 @@ export default class App extends React.Component {
   render() {
     return (
       <Navigator
-        initialRoute={{ id: 'a' }}
+        initialRoute={{ id: 'principal' }}
         renderScene={(route, navigator) => {
-          if(route.id === 'a'){
-            return(<CenaPrincipal />);
+          if(route.id === 'principal'){
+            return(<CenaPrincipal navigator={navigator} />);
           }
 
-          if(route.id === 'b'){
-            return(<CenaCliente />)
+          if(route.id === 'cliente'){
+            return(<CenaCliente />);
           }
         }}
       />
