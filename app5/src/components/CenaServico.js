@@ -1,64 +1,62 @@
 import React from 'react';
 import { 
     StyleSheet,
-    Text,
     View,
     StatusBar,
+    Text,
     Image
 } from 'react-native';
 
 import BarraNavegacao from './BarraNavegacao'
 
-const logo = require('../../assets/logo.png')
-const menuCliente = require('../../assets/menu_cliente.png')
-const menuContato = require('../../assets/menu_contato.png')
-const menuEmpresa = require('../../assets/menu_empresa.png')
-const menuServico = require('../../assets/menu_servico.png')
+const detalheServico = require('../../assets/detalhe_servico.png')
 
-
-export default class CenaPrincipal extends React.Component {
+export default class CenaServico extends React.Component {
   render() {
     return (
-        <View>
+      <View>
         <StatusBar 
           //hidden={true}
           backgroundColor= '#ccc'
         />
 
-        <BarraNavegacao />
-        
-        <View style={styles.logo}>
-          <Image source={logo} />
-        </View>
+        <BarraNavegacao voltar navigator={this.props.navigator}/>
        
-        <View style={styles.menu}>
-          <View style={styles.menuGroup}>
-            <Image style={styles.imgMenu} source={menuCliente} />
-            <Image style={styles.imgMenu} source={menuContato} />
-          </View>
-
-          <View style={styles.menuGroup}>
-            <Image  style={styles.imgMenu} source={menuEmpresa} />
-            <Image style={styles.imgMenu} source={menuServico} />
-          </View>
+        <View style={styles.cabecalho}>
+          <Image source={detalheServico} />
+          <Text style={styles.txtTitulo}>Nossos Serviços</Text>
         </View>
+
+        <View style={styles.detalheEmpresa}>
+            <Text style={styles.txtDetalheCliente}>- Lorem Ipsum is simply dummy text of the printing </Text>
+            <Text style={styles.txtDetalheCliente}>- Lorem Ipsum is simply dummy text of the printing </Text>
+            <Text style={styles.txtDetalheCliente}>- Lorem Ipsum is simply dummy text of the printing </Text> 
+        </View>
+        
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-    logo: {
-      marginTop: 30,
-      alignItems: 'center'
+    cabecalho: {
+      flexDirection: 'row',
+      marginTop: 20
     },
-    menu: {
-      alignItems: 'center'
+    txtTitulo: {
+      fontSize: 30,
+      color: '#19d1c8',
+      marginLeft: 10,
+      marginTop: 20
     },
-    menuGroup: {
-      flexDirection: 'row'
+    detalheCliente: {
+      padding: 20,
+      marginTop: 20
     },
-    imgMenu: {
-      margin: 15
+    txtDetalheCliente: {
+      fontSize: 20,
+      color: '#222222',
+      marginLeft: 10,
+      marginTop: 20
     }
 });

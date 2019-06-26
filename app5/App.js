@@ -6,7 +6,9 @@ import {
 import CenaPrincipal from './src/components/CenaPrincipal'
 import CenaCliente from './src/components/CenaCliente'
 import CenaContato from './src/components/CenaContato'
-import CenaEmpresa from './src/components/CenaEmpresa';
+import CenaEmpresa from './src/components/CenaEmpresa'
+import CenaServico from './src/components/CenaServico'
+
 
 export default class App extends React.Component {
   render() {
@@ -14,25 +16,28 @@ export default class App extends React.Component {
       <Navigator
         initialRoute={{ id: 'principal' }}
         renderScene={(route, navigator) => {
-          if(route.id === 'principal'){
-            return(<CenaPrincipal navigator={navigator} />);
+
+          switch(route.id){
+
+            case 'principal':
+              return(<CenaPrincipal navigator={navigator} />);
+
+            case 'cliente':
+              return(<CenaCliente navigator={navigator} />);
+
+            case 'contato':
+              return(<CenaContato navigator={navigator} />);
+
+            case 'empresa':
+              return(<CenaEmpresa navigator={navigator} />);
+
+            case 'servico':
+              return(<CenaServico navigator={navigator} />);
+
+            default:
+              return false;
           }
 
-          if(route.id === 'cliente'){
-            return(<CenaCliente navigator={navigator} />);
-          }
-
-          if(route.id === 'contato'){
-            return(<CenaContato navigator={navigator} />);
-          }
-
-          if(route.id === 'empresa'){
-            return(<CenaEmpresa navigator={navigator} />);
-          }
-
-          if(route.id === 'servico'){
-            return(<CenaContato navigator={navigator} />);
-          }
         }}
       />
     );
