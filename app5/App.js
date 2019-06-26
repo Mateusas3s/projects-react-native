@@ -17,7 +17,7 @@ export default class App extends React.Component {
           }
 
           if(route.id === 'cliente'){
-            return(<CenaCliente />);
+            return(<CenaCliente navigator={navigator} />);
           }
         }}
       />

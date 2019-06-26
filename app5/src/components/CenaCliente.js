@@ -22,7 +22,7 @@ export default class CenaCliente extends React.Component {
           backgroundColor= '#ccc'
         />
 
-        <BarraNavegacao />
+        <BarraNavegacao voltar navigator={this.props.navigator}/>
        
         <View style={styles.cabecalho}>
           <Image source={detalheCliente} />
