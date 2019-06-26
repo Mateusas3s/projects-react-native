@@ -28,9 +28,9 @@ export default class CenaContato extends React.Component {
         </View>
 
         <View style={styles.detalheContato}>
-          <Text>Tel: (11) 3765-5678</Text>
-          <Text>Cel: (11) 9 8765-5678</Text>
-          <Text></Text>
+          <Text style={styles.txtDetalheContato}>Tel: (11) 3765-5678</Text>
+          <Text style={styles.txtDetalheContato}>Cel: (11) 9 8765-5678</Text>
+          <Text style={styles.txtDetalheContato}>Email: contato@contatomail.com</Text>
         </View>
         
       </View>

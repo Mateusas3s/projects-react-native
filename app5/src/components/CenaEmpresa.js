@@ -1,64 +1,72 @@
 import React from 'react';
 import { 
     StyleSheet,
-    Text,
     View,
     StatusBar,
+    Text,
     Image
 } from 'react-native';
 
 import BarraNavegacao from './BarraNavegacao'
 
-const logo = require('../../assets/logo.png')
-const menuCliente = require('../../assets/menu_cliente.png')
-const menuContato = require('../../assets/menu_contato.png')
-const menuEmpresa = require('../../assets/menu_empresa.png')
-const menuServico = require('../../assets/menu_servico.png')
+const detalheEmpresa = require('../../assets/detalhe_empresa.png')
 
-
-export default class CenaPrincipal extends React.Component {
+export default class CenaEmpresa extends React.Component {
   render() {
     return (
-        <View>
+      <View>
         <StatusBar 
           //hidden={true}
           backgroundColor= '#ccc'
         />
 
-        <BarraNavegacao />
-        
-        <View style={styles.logo}>
-          <Image source={logo} />
-        </View>
+        <BarraNavegacao voltar navigator={this.props.navigator}/>
        
-        <View style={styles.menu}>
-          <View style={styles.menuGroup}>
-            <Image style={styles.imgMenu} source={menuCliente} />
-            <Image style={styles.imgMenu} source={menuContato} />
-          </View>
-
-          <View style={styles.menuGroup}>
-            <Image  style={styles.imgMenu} source={menuEmpresa} />
-            <Image style={styles.imgMenu} source={menuServico} />
-          </View>
+        <View style={styles.cabecalho}>
+          <Image source={detalheEmpresa} />
+          <Text style={styles.txtTitulo}>Nossa Empresa</Text>
         </View>
+
+        <View style={styles.detalheEmpresa}>
+          <Text style={styles.txtDetalheCliente}>
+            Lorem Ipsum is simply dummy text of the printing 
+            and typesetting industry. Lorem Ipsum has been 
+            the industry's standard dummy text ever since 
+            the 1500s, when an unknown printer took a galley 
+            of type and scrambled it to make a type specimen 
+            book. It has survived not only five centuries, 
+            but also the leap into electronic typesetting, 
+            remaining essentially unchanged. It was 
+            popularised in the 1960s with the release of 
+            Letraset sheets containing Lorem Ipsum passages, 
+            and more recently with desktop publishing software 
+            like Aldus PageMaker including versions of Lorem Ipsum.</Text>
+        </View>
+        
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-    logo: {
-      marginTop: 30,
-      alignItems: 'center'
+    cabecalho: {
+      flexDirection: 'row',
+      marginTop: 20
     },
-    menu: {
-      alignItems: 'center'
+    txtTitulo: {
+      fontSize: 30,
+      color: '#ec7148',
+      marginLeft: 10,
+      marginTop: 20
     },
-    menuGroup: {
-      flexDirection: 'row'
+    detalheCliente: {
+      padding: 20,
+      marginTop: 20
     },
-    imgMenu: {
-      margin: 15
+    txtDetalheCliente: {
+      fontSize: 20,
+      color: '#222222',
+      marginLeft: 10,
+      marginTop: 20
     }
 });

@@ -5,6 +5,8 @@ import {
 
 import CenaPrincipal from './src/components/CenaPrincipal'
 import CenaCliente from './src/components/CenaCliente'
+import CenaContato from './src/components/CenaContato'
+import CenaEmpresa from './src/components/CenaEmpresa';
 
 export default class App extends React.Component {
   render() {
@@ -18,6 +20,18 @@ export default class App extends React.Component {
 
           if(route.id === 'cliente'){
             return(<CenaCliente navigator={navigator} />);
+          }
+
+          if(route.id === 'contato'){
+            return(<CenaContato navigator={navigator} />);
+          }
+
+          if(route.id === 'empresa'){
+            return(<CenaEmpresa navigator={navigator} />);
+          }
+
+          if(route.id === 'servico'){
+            return(<CenaContato navigator={navigator} />);
           }
         }}
       />
