@@ -16,7 +16,7 @@ const cliente2 = require('../../assets/cliente2.png')
 export default class CenaCliente extends React.Component {
   render() {
     return (
-      <View>
+      <View style={{ borderWidth: 1, borderColor: 'red' }}>
         <StatusBar 
           //hidden={true}
           backgroundColor= '#ccc'
