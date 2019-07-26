@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
 
 const logo = require('./src/imgs/logo.png');
 const btnJogar = require('./src/imgs/botao_jogar.png');
@@ -9,12 +9,12 @@ const btnOutrosJogos = require('./src/imgs/outros_jogos.png');
 export default function App() {
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.apresentacao}>
         <Image source={logo} />
         <Image source={btnJogar} />
       </View>
 
-      <View>
+      <View style={styles.rodape}>
         <Image source={btnSobreJogo} />
         <Image source={btnOutrosJogos} />
       </View>
@@ -25,8 +25,17 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#61bd8c',
   },
+  apresentacao: {
+    flex: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+
+  },
+  rodape: {
+    flex: 2,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  }
 });
