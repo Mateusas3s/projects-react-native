@@ -14,10 +14,10 @@ const detalheContato = require('../../assets/detalhe_contato.png')
 export default class CenaContato extends React.Component {
   render() {
     return (
-      <View>
+      <View style={{ flex: 1, backgroundColor: '#fff' }}>
         <StatusBar 
           //hidden={true}
-          backgroundColor= '#ccc'
+          backgroundColor= '#61bd8c'
         />
 
         <BarraNavegacao voltar navigator={this.props.navigator}/>

@@ -14,10 +14,10 @@ const detalheEmpresa = require('../../assets/detalhe_empresa.png')
 export default class CenaEmpresa extends React.Component {
   render() {
     return (
-      <View>
+      <View style={{ flex: 1, backgroundColor: '#fff' }}>
         <StatusBar 
           //hidden={true}
-          backgroundColor= '#ccc'
+          backgroundColor= '#ec7148'
         />
 
         <BarraNavegacao voltar navigator={this.props.navigator}/>

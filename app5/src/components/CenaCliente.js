@@ -16,10 +16,10 @@ const cliente2 = require('../../assets/cliente2.png')
 export default class CenaCliente extends React.Component {
   render() {
     return (
-      <View style={{ borderWidth: 1, borderColor: 'red' }}>
+      <View style={{ flex: 1, backgroundColor: '#fff' }}>
         <StatusBar 
           //hidden={true}
-          backgroundColor= '#ccc'
+          backgroundColor= '#b9c941'
         />
 
         <BarraNavegacao voltar navigator={this.props.navigator}/>
